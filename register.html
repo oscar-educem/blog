@@ -4,39 +4,58 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Blog</title>
+    <title>Blog - Registre</title>
+
     <meta name="author" content="Oscar i Eric">
-    <meta name="description" content="Blog">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Registre Blog">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="icon" type="image/x-icon" href="./img/Logo.jpeg">
     <link rel="stylesheet" type="text/css" href="./css/register.css">
 </head>
 
 <body>
-    <form action="./login.php" method="POST">
-        <p>
-            <label for="nom"><b>Nom</b></label>
-            <input id="nom" type="text" placeholder="Introdueix el teu nom" name="uname" required>
-        </p>
-        <p>
-            <label for="cognom"><b>Cognoms</b></label>
-            <input id="cognom" type="text" placeholder="Introdueix els teus cognoms" name="uname" required>
-        </p>
-        <hr>
-        <p>
-            <label for="user"><b>Usuari</b></label>
-            <input id="user" type="text" placeholder="Introdueix el teu usuari" name="uname" required>
-        </p>
-        <p>
-            <label for="pwd"><b>Contrasenya</b></label>
-            <input id="pwd" type="password" placeholder="Introdueix la teva contrasenya" name="password" required>
-        </p>
-        <p>
-            <label for="checkbox"><b>Contrasenya</b></label>
-            <input id="checkbox" type="checkbox" placeholder="Introdueix la teva contrasenya" name="password" required>
-        </p>
-        <p>
-            <button type="submit">Login</button>
-        </p>
-    </form>
+
+    <main class="register-container">
+        <form class="register-form" action="./login.php" method="POST">
+
+            <h1>Crear Compte</h1>
+
+            <p>
+                <label for="nom"><b>Nom</b></label>
+                <input id="nom" type="text" placeholder="Introdueix el teu nom" name="nom" required>
+            </p>
+
+            <p>
+                <label for="cognom"><b>Cognoms</b></label>
+                <input id="cognom" type="text" placeholder="Introdueix els teus cognoms" name="cognoms" required>
+            </p>
+
+            <hr>
+
+            <p>
+                <label for="user"><b>Usuari</b></label>
+                <input id="user" type="text" placeholder="Introdueix el teu usuari" name="uname" required>
+            </p>
+
+            <p>
+                <label for="pwd"><b>Contrasenya</b></label>
+                <input id="pwd" type="password" placeholder="Introdueix la teva contrasenya" name="password" required>
+            </p>
+
+            <p class="checkbox">
+                <label>
+                    <input type="checkbox" required>
+                    Accepto els termes i condicions
+                </label>
+            </p>
+
+            <p>
+                <button type="submit">Registrar-se</button>
+            </p>
+
+        </form>
+    </main>
+
 </body>
+</html>
