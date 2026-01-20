@@ -69,7 +69,7 @@ body {
     background-color: #004c99;
 }
 
-/* 📱 MÓVILES */
+/* MÓVILES */
 @media (max-width: 600px) {
     .login-form {
         padding: 20px;
@@ -80,7 +80,7 @@ body {
     }
 }
 
-/* 📺 TV / PANTALLAS GRANDES */
+/*TV / PANTALLAS GRANDES */
 @media (min-width: 1600px) {
     body {
         font-size: 18px;
