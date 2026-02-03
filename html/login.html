@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Blog</title>
+    <meta name="author" content="Oscar i Eric">
+    <meta name="description" content="Blog">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="./img/Logo.jpeg">
+    <link rel="stylesheet" type="text/css" href="./css/login.css">
+</head>
+
+<body>
+    <nav class="colorbgnav">
+        <ul class="colorbgnav">
+            <li class="textnav col-12 col-sm-12 col-md-12 col-lg-12"> <a href="./../index.html">Home</a></li>
+            <li class="textnav col-12 col-sm-12 col-md-12 col-lg-12"> <a href="./login.html">Login</a></li>
+            <li class="textnav col-12 col-sm-12 col-md-12 col-lg-12"> <a href="./register.html">Register</a></li>
+            <li class="textnav col-12 col-sm-12 col-md-12 col-lg-12"> <a href="./posts.html">Posts</a></li>
+            <li class="textnav col-12 col-sm-12 col-md-12 col-lg-12"> <a href="./about.html">About</a></li>
+            <li class="textnav col-12 col-sm-12 col-md-12 col-lg-12"> <a href="./contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <form action="./login.php" method="POST">
+        <p>
+            <label for="user"><b>Usuari</b></label>
+            <input id="user" type="text" placeholder="Introdueix el teu usuari" name="uname" required>
+        </p>
+        <p>
+            <label for="pwd"><b>Contrasenya</b></label>
+            <input id="pwd" type="password" placeholder="Introdueix la teva contrasenya" name="password" required>
+        </p>
+        <p>
+            <button type="submit">Login</button>
+        </p>
+    </form>
+</body>
