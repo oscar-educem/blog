@@ -4,36 +4,136 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Blog</title>
+    <title>Blog - Login</title>
     <meta name="author" content="Oscar i Eric">
     <meta name="description" content="Blog">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="./img/Logo.jpeg">
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff; 
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+
+        .colorbgnav {
+                background-color: lab(93.4% 0 -0.01);
+            width: 100%;
+        }
+        
+
+        .nav-elements {
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+            padding: 15px 0;
+            margin: 0;
+        }
+
+        .navelements {
+            text-decoration: none;
+            color: black;
+        }
+
+        .login-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1; 
+            padding: 20px;
+        }
+
+        .login-card {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 350px; 
+        }
+
+        .login-card h2 {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        
+        .login-card p {
+            margin-bottom: 15px;
+        }
+
+        .login-card label {
+            display: block;
+            margin-bottom: 5px;
+            color: #666;
+        }
+
+        .login-card input[type="text"],
+        .login-card input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box; 
+        }
+
+        .login-card button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .login-card button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 
-<body class="container">
+<body>
     <nav class="colorbgnav">
-                <ul class="nav-elements">
-                        <li class="textnav"> <a class="navelements" href="../index.html">Home</a></li>
-                        <li class="textnav"> <a class="navelements" href="./login.html">Login</a></li>
-                        <li class="textnav"> <a class="navelements" href="./register.html">Register</a></li>
-                        <li class="textnav"> <a class="navelements" href="./posts.html">Posts</a></li>
-                        <li class="textnav"> <a class="navelements" href="./about.html">About</a></li>
-                        <li class="textnav"> <a class="navelements" href="./contacte.html">Contact</a></li>
-                </ul>
-        </nav>
-    <form action="./login.php" method="POST">
-        <p>
-            <label for="user"><b>Usuari</b></label>
-            <input id="user" type="text" placeholder="Introdueix el teu usuari" name="uname" required>
-        </p>
-        <p>
-            <label for="pwd"><b>Contrasenya</b></label>
-            <input id="pwd" type="password" placeholder="Introdueix la teva contrasenya" name="password" required>
-        </p>
-        <p>
-            <button type="submit">Login</button>
-        </p>
-    </form>
+        <ul class="nav-elements">
+            <li class="textnav"> <a class="navelements" href="../index.html">Home</a></li>
+            <li class="textnav"> <a class="navelements" href="./login.html">Login</a></li>
+            <li class="textnav"> <a class="navelements" href="./register.html">Register</a></li>
+            <li class="textnav"> <a class="navelements" href="./posts.html">Posts</a></li>
+            <li class="textnav"> <a class="navelements" href="./about.html">About</a></li>
+            <li class="textnav"> <a class="navelements" href="./contacte.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="login-wrapper">
+        <div class="login-card">
+            <h2>Iniciar Sessió</h2>
+            <form action="./login.php" method="POST">
+                <p>
+                    <label for="user"><b>Usuari</b></label>
+                    <input id="user" type="text" placeholder="Introdueix el teu usuari" name="uname" required>
+                </p>
+                <p>
+                    <label for="pwd"><b>Contrasenya</b></label>
+                    <input id="pwd" type="password" placeholder="Introdueix la teva contrasenya" name="password" required>
+                </p>
+                <p>
+                    <button type="submit">Login</button>
+                </p>
+            </form>
+        </div>
+    </main>
 </body>
+
+</html>
