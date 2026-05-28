@@ -1,69 +1,80 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <!-- Codificacion para que el navegador lea bien el texto. -->
-  <meta charset="UTF-8">
+    <!-- Codificacion para que el navegador lea bien el texto. -->
+    <meta charset="UTF-8">
 
-  <!-- Hace que la pagina se adapte correctamente a moviles y tablets. -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Hace que la pagina se adapte correctamente a moviles y tablets. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Titulo que aparece en la pestana del navegador. -->
-  <title>Login - Blog Oscar y Eric</title>
+    <!-- Titulo que aparece en la pestana del navegador. -->
+    <title>Login - Blog Oscar y Eric</title>
 
-  <!-- Archivo CSS compartido con la pagina principal. -->
-  <link rel="stylesheet" href="../styles.css">
+    <!-- Archivo CSS compartido con la pagina principal. -->
+    <link rel="stylesheet" href="../styles.css">
 </head>
+
 <body>
-  <!-- Cabecera principal de la web. -->
-  <header class="site-header">
-    <div class="container header-content">
-      <a href="../index.html"><h1>Blog Oscar y Eric</h1></a>
+    <!-- Cabecera principal de la web. -->
+    <header class="site-header">
+        <div class="container header-content">
+            <a href="../index.html">
+                <h1>Blog Oscar y Eric</h1>
+            </a>
 
-      <!-- Menu de navegacion principal. -->
-      <nav class="main-nav">
-        <a href="../index.html" i18n data-es="Inicio" data-ca="Inici">Inicio</a>
-        <a href="posts.html" i18n data-es="Posts" data-ca="Posts">Posts</a>
-        <a href="about.html" i18n data-es="About" data-ca="Sobre nosaltres">About</a>
-        <a href="contacto.html" i18n data-es="Contacto" data-ca="Contacte">Contacto</a>
-        <a class="active" href="login.html" i18n data-es="Login" data-ca="Login">Login</a>
-        <a href="registro.html" i18n data-es="Registro" data-ca="Registre">Registro</a>
-        <select id="langSelect" class="language-select" aria-label="Selector de idioma">
-          <option value="es">ES</option>
-          <option value="ca">CA</option>
-        </select>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Contenido principal del login. -->
-  <main class="container simple-page narrow-page">
-    <section class="page-card">
-      <p class="category" i18n data-es="Login" data-ca="Login">Login</p>
-      <h2 i18n data-es="Iniciar sesion" data-ca="Iniciar sessio">Iniciar sesion</h2>
-      <p i18n data-es="Accede para guardar tus datos y comentar en las publicaciones." data-ca="Accedeix per guardar les teves dades i comentar a les publicacions.">Accede para guardar tus datos y comentar en las publicaciones.</p>
-      <form class="form-box">
-        <div class="field">
-          <label for="email" i18n data-es="Email" data-ca="Email">Email</label>
-          <input id="email" type="email" name="email" placeholder="tu@email.com" autocomplete="email" required>
+            <!-- Menu de navegacion principal. -->
+            <nav class="main-nav">
+                <a href="../index.html" i18n data-es="Inicio" data-ca="Inici">Inicio</a>
+                <a href="posts.html" i18n data-es="Posts" data-ca="Posts">Posts</a>
+                <a href="about.html" i18n data-es="About" data-ca="Sobre nosaltres">About</a>
+                <a href="contacto.html" i18n data-es="Contacto" data-ca="Contacte">Contacto</a>
+                <a class="active" href="login.html" i18n data-es="Login" data-ca="Login">Login</a>
+                <a href="registro.html" i18n data-es="Registro" data-ca="Registre">Registro</a>
+                <select id="langSelect" class="language-select" aria-label="Selector de idioma">
+                    <option value="es">ES</option>
+                    <option value="ca">CA</option>
+                </select>
+            </nav>
         </div>
+    </header>
 
-        <div class="field">
-          <label for="password" i18n data-es="Contrasena" data-ca="Contrasenya">Contrasena</label>
-          <input id="password" type="password" name="password" placeholder="Tu contrasena" data-placeholder-es="Tu contrasena" data-placeholder-ca="La teva contrasenya" autocomplete="current-password" required>
-        </div>
+    <!-- Contenido principal del login. -->
+    <main class="container simple-page narrow-page">
+        <section class="page-card">
+            <p class="category" i18n data-es="Login" data-ca="Login">Login</p>
+            <h2 i18n data-es="Iniciar sesion" data-ca="Iniciar sessio">Iniciar sesion</h2>
+            <p i18n data-es="Accede para guardar tus datos y comentar en las publicaciones."
+                data-ca="Accedeix per guardar les teves dades i comentar a les publicacions.">Accede para guardar tus
+                datos y comentar en las publicaciones.</p>
+            <form class="form-box">
+                <div class="field">
+                    <label for="email" i18n data-es="Email" data-ca="Email">Email</label>
+                    <input id="email" type="email" name="email" placeholder="tu@email.com" autocomplete="email"
+                        required>
+                </div>
 
-        <div class="form-actions">
-          <button type="submit" i18n data-es="Entrar" data-ca="Entrar">Entrar</button>
-          <a class="form-link" href="registro.html" i18n data-es="Crear cuenta" data-ca="Crear compte">Crear cuenta</a>
-        </div>
-      </form>
-    </section>
-  </main>
+                <div class="field">
+                    <label for="password" i18n data-es="Contrasena" data-ca="Contrasenya">Contrasena</label>
+                    <input id="password" type="password" name="password" placeholder="Tu contrasena"
+                        data-placeholder-es="Tu contrasena" data-placeholder-ca="La teva contrasenya"
+                        autocomplete="current-password" required>
+                </div>
 
-  <!-- Pie de pagina. -->
-  <footer class="site-footer">
-    <p>Blog Oscar y Eric - 2025/2026</p>
-  </footer>
-  <script src="../js/script.js"></script>
+                <div class="form-actions">
+                    <button type="submit" i18n data-es="Entrar" data-ca="Entrar">Entrar</button>
+                    <a class="form-link" href="registro.html" i18n data-es="Crear cuenta" data-ca="Crear compte">Crear
+                        cuenta</a>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Pie de pagina. -->
+    <footer class="site-footer">
+        <p>Blog Oscar y Eric - 2025/2026</p>
+    </footer>
+    <script src="../js/script.js"></script>
 </body>
+
 </html>
