@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Codificacion para que el navegador lea bien el texto. -->
+  <meta charset="UTF-8">
+
+  <!-- Hace que la pagina se adapte correctamente a moviles y tablets. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Titulo que aparece en la pestana del navegador. -->
+  <title>Contacto - Blog Oscar y Eric</title>
+
+  <!-- Archivo CSS compartido con la pagina principal. -->
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <!-- Cabecera principal de la web. -->
+  <header class="site-header">
+    <div class="container header-content">
+      <a href="../index.html"><h1>Blog Oscar y Eric</h1></a>
+
+      <!-- Menu de navegacion principal. -->
+      <nav class="main-nav">
+        <a href="../index.html" i18n data-es="Inicio" data-ca="Inici">Inicio</a>
+        <a href="posts.html" i18n data-es="Posts" data-ca="Posts">Posts</a>
+        <a href="about.html" i18n data-es="About" data-ca="Sobre nosaltres">About</a>
+        <a class="active" href="contacto.html" i18n data-es="Contacto" data-ca="Contacte">Contacto</a>
+        <a href="login.html" i18n data-es="Login" data-ca="Login">Login</a>
+        <a href="registro.html" i18n data-es="Registro" data-ca="Registre">Registro</a>
+        <select id="langSelect" class="language-select" aria-label="Selector de idioma">
+          <option value="es">ES</option>
+          <option value="ca">CA</option>
+        </select>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contenido principal de contacto. -->
+  <main class="container simple-page">
+    <section class="page-card">
+      <p class="category" i18n data-es="Contacto" data-ca="Contacte">Contacto</p>
+      <h2 i18n data-es="Contacta con nosotros" data-ca="Contacta amb nosaltres">Contacta con nosotros</h2>
+      <p i18n data-es="Escribenos si tienes alguna duda, idea o propuesta para el blog." data-ca="Escriu-nos si tens algun dubte, idea o proposta per al blog.">Escribenos si tienes alguna duda, idea o propuesta para el blog.</p>
+      <form class="form-box">
+        <div class="form-grid">
+          <div class="field">
+            <label for="nombre" i18n data-es="Nombre" data-ca="Nom">Nombre</label>
+            <input id="nombre" type="text" name="nombre" placeholder="Tu nombre" data-placeholder-es="Tu nombre" data-placeholder-ca="El teu nom" autocomplete="name" required>
+          </div>
+
+          <div class="field">
+            <label for="email" i18n data-es="Email" data-ca="Email">Email</label>
+            <input id="email" type="email" name="email" placeholder="tu@email.com" autocomplete="email" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="mensaje" i18n data-es="Mensaje" data-ca="Missatge">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje" data-placeholder-es="Escribe tu mensaje" data-placeholder-ca="Escriu el teu missatge" required></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" i18n data-es="Enviar mensaje" data-ca="Enviar missatge">Enviar mensaje</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <!-- Pie de pagina. -->
+  <footer class="site-footer">
+    <p>Blog Oscar y Eric - 2025/2026</p>
+  </footer>
+  <script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,77 +1,60 @@
 <!DOCTYPE html>
-<html lang="ca">
+<html lang="es">
 <head>
-    <title>Biografia d'Oscar i Eric</title>
-    <meta charset="utf-8">
-    <meta name="author" content="Oscar y Eric">
-    <meta name="description" content="Biografia de Oscar i Eric">
-    <meta name="keywords" content="Informació, autors, informatica">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Codificacion para que el navegador lea bien el texto. -->
+  <meta charset="UTF-8">
 
-    <link rel="stylesheet" href="/css/style.css">
+  <!-- Hace que la pagina se adapte correctamente a moviles y tablets. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Titulo que aparece en la pestana del navegador. -->
+  <title>About - Blog Oscar y Eric</title>
+
+  <!-- Archivo CSS compartido con la pagina principal. -->
+  <link rel="stylesheet" href="../styles.css">
 </head>
+<body>
+  <!-- Cabecera principal de la web. -->
+  <header class="site-header">
+    <div class="container header-content">
+      <a href="../index.html"><h1>Blog Oscar y Eric</h1></a>
 
-<body class="container">
-    <nav class="colorbgnav">
-            <ul class="nav-elements">
-                <li class="textnav"> <a class="navelements" href="../index.html">Home</a></li>
-                <li class="textnav"> <a class="navelements" href="./login.html">Login</a></li>
-                <li class="textnav"> <a class="navelements" href="./register.html">Register</a></li>
-                <li class="textnav"> <a class="navelements" href="./posts.html">Posts</a></li>
-                <li class="textnav"> <a class="navelements" href="./about.html">About</a></li>
-                <li class="textnav"> <a class="navelements" href="./contact.html">Contact</a></li>
-            </ul>
-    </nav>
-    <div class="container">
-
-        <h1>Biografia d'Oscar Sanchez i Eric Aguila</h1>
-
-        <h2>Oscar Sanchez (Alumne de SMX 2)</h2>
-        <hr>
-        <p>
-            Oscar Sanchez Puerto és un apassionat alumne de SMX 2 del centre Educem.
-            Des de ben petit, l'Oscar ha demostrat un gran interès i passió per la informàtica.
-            La seva curiositat constant l’ha portat a explorar diferents àrees dins del món tecnològic.
-        </p>
-
-        <p>
-            Des que va entrar al cicle, l’Oscar ha estat nodrint-se cada dia del coneixement del món informàtic,
-            aprofundint en conceptes i eines que li permeten desenvolupar habilitats pràctiques i teòriques.
-        </p>
-
-        <p>
-            A més de la seva capacitat acadèmica, l’Oscar destaca per la seva perseverança,
-            la seva actitud positiva davant dels reptes i la seva habilitat per treballar en equip.
-        </p>
-
-        <h3>Eric Aguila (Alumne de SMX 2)</h3>
-        <hr>
-        <p>
-            Eric Aguila Galvez és un apassionat alumne de SMX 2 del centre Educem.
-            Des de petit, Eric ha mostrat un gran interès i passió per la informàtica.
-        </p>
-
-        <p>
-            Des que va començar el cicle, Eric s’ha anat nodrint dia a dia de coneixements informàtics,
-            aprofundint en conceptes i eines que li permeten desenvolupar habilitats pràctiques i teòriques.
-        </p>
-
-        <p>
-            A més de les seves capacitats acadèmiques, Eric destaca per la seva perseverança,
-            la seva actitud positiva davant dels reptes i la seva habilitat per treballar en equip.
-        </p>
-
-        <h4>LES NOSTRES XARXES SOCIALS</h4>
-        <hr>
-        <p>
-            Canal de YouTube (Oscar):
-            <a href="https://www.youtube.com/@OscarSanchezYT" target="_blank">OscarSanchezYT</a>
-        </p>
-        <p>
-            Canal de YouTube (Eric):
-            <a href="https://www.youtube.com/@EricAguilaYT" target="_blank">EricAguilaYT</a>
-        </p>
-
+      <!-- Menu de navegacion principal. -->
+      <nav class="main-nav">
+        <a href="../index.html" i18n data-es="Inicio" data-ca="Inici">Inicio</a>
+        <a href="posts.html" i18n data-es="Posts" data-ca="Posts">Posts</a>
+        <a class="active" href="about.html" i18n data-es="About" data-ca="Sobre nosaltres">About</a>
+        <a href="contacto.html" i18n data-es="Contacto" data-ca="Contacte">Contacto</a>
+        <a href="login.html" i18n data-es="Login" data-ca="Login">Login</a>
+        <a href="registro.html" i18n data-es="Registro" data-ca="Registre">Registro</a>
+        <select id="langSelect" class="language-select" aria-label="Selector de idioma">
+          <option value="es">ES</option>
+          <option value="ca">CA</option>
+        </select>
+      </nav>
     </div>
+  </header>
+
+  <!-- Contenido principal de la pagina About. -->
+  <main class="container simple-page">
+    <section class="page-card">
+      <p class="category" i18n data-es="About" data-ca="Sobre nosaltres">About</p>
+      <h2 i18n data-es="Sobre nosotros" data-ca="Sobre nosaltres">Sobre nosotros</h2>
+      <p i18n data-es="Somos Oscar y Eric, y este blog sera un espacio para publicar ideas, posts y actualizaciones del proyecto." data-ca="Som Oscar i Eric, i aquest blog sera un espai per publicar idees, posts i actualitzacions del projecte.">
+        Somos Oscar y Eric, y este blog sera un espacio para publicar ideas,
+        posts y actualizaciones del proyecto.
+      </p>
+      <p i18n data-es="De momento la pagina es sencilla para poder ir ampliandola poco a poco con nuevas secciones." data-ca="De moment la pagina es senzilla per poder ampliar-la a poc a poc amb noves seccions.">
+        De momento la pagina es sencilla para poder ir ampliandola poco a poco
+        con nuevas secciones.
+      </p>
+    </section>
+  </main>
+
+  <!-- Pie de pagina. -->
+  <footer class="site-footer">
+    <p>Blog Oscar y Eric - 2025/2026</p>
+  </footer>
+  <script src="../js/script.js"></script>
 </body>
 </html>

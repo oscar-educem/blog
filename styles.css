@@ -1,0 +1,728 @@
+/* Hace que padding y border cuenten dentro del ancho total de cada elemento. */
+* {
+  box-sizing: border-box;
+}
+
+/* Estilos generales de la pagina: tipografia, color principal y fondo. */
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #222;
+  background: #eef2f5;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
+/* Quita el subrayado por defecto de los enlaces. */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Contenedor central para que el contenido no ocupe toda la pantalla. */
+.container {
+  width: min(68.75rem, 92%);
+  margin: 0 auto;
+}
+
+/* Cabecera blanca con una linea inferior suave. */
+.site-header {
+  grid-area: header;
+  background: #ffffff;
+  border-bottom: 0.0625rem solid #d8dde3;
+  box-shadow: 0 0.25rem 1rem rgba(34, 45, 57, 0.05);
+}
+
+/* Organiza el titulo y el menu en columna para pantallas pequenas. */
+.header-content {
+  min-height: 4.875rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 1.125rem 0;
+  gap: 1.5rem;
+}
+
+/* Tamano del titulo principal del blog. */
+.site-header h1 {
+  margin: 0;
+  font-size: 1.75rem;
+}
+
+/* Menu de navegacion con enlaces en fila y salto si no caben. */
+.main-nav {
+  display: flex;
+  gap: 1.125rem;
+  flex-wrap: wrap;
+}
+
+/* Estilo base de los enlaces del menu. */
+.main-nav a {
+  padding: 0.35rem 0;
+  font-weight: 700;
+  color: #3f4b57;
+  border-bottom: 0.125rem solid transparent;
+}
+
+/* Color al pasar el raton por enlaces importantes. */
+.main-nav a:hover,
+.main-nav a.active,
+.read-more:hover,
+.category-list a:hover,
+.mini-posts a:hover {
+  color: #0d6b87;
+}
+
+/* Subrayado sencillo para indicar la pagina actual. */
+.main-nav a.active {
+  border-bottom-color: #0d6b87;
+}
+
+/* Selector de idioma dentro del menu de navegacion. */
+.language-select {
+  padding: 0.35rem 0.55rem;
+  font: inherit;
+  font-weight: 700;
+  color: #3f4b57;
+  border: 0.0625rem solid #cfd6dd;
+  border-radius: 0.5rem;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.language-select:focus {
+  outline: none;
+  border-color: #135d75;
+  box-shadow: 0 0 0 0.15rem rgba(19, 93, 117, 0.15);
+}
+
+/* Estructura principal en una sola columna para moviles. */
+.page-grid {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+  padding: 2.125rem 0;
+}
+
+/* Rejilla de entradas en una columna para moviles. */
+.posts {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.375rem;
+}
+
+/* Aspecto compartido por tarjetas de posts y cajas laterales. */
+.post-card,
+.sidebar-box {
+  background: #ffffff;
+  border: 0.0625rem solid #dce1e6;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1.5rem rgba(34, 45, 57, 0.06);
+}
+
+/* Tarjeta de post colocada en columna. */
+.post-card {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efecto suave para que las tarjetas parezcan mas cuidadas. */
+.post-card:hover {
+  transform: translateY(-0.15rem);
+  box-shadow: 0 0.75rem 1.75rem rgba(34, 45, 57, 0.1);
+}
+
+/* El post destacado ocupa todo el ancho y empieza con una sola columna. */
+.post-card.featured {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+/* Bloque principal de bienvenida de la pagina de inicio. */
+.home-hero {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 2rem;
+  background: #ffffff;
+  border-top: 0.35rem solid #276678;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1.5rem rgba(34, 45, 57, 0.06);
+}
+
+/* Etiqueta pequena de la portada, sin parecer una imagen ni una tarjeta. */
+.hero-mark {
+  width: fit-content;
+  min-height: auto;
+  padding: 0.45rem 0.8rem;
+  color: #276678;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  border: 0.0625rem solid #cfd6dd;
+  background: #eef2f5;
+}
+
+/* Texto de bienvenida del inicio. */
+.hero-text {
+  max-width: 44rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.hero-text h2 {
+  margin: 0;
+  font-size: 2.4rem;
+  line-height: 1.2;
+  color: #222;
+}
+
+.hero-text p {
+  margin: 0;
+  color: #5c6873;
+  line-height: 1.6;
+}
+
+/* En el bloque principal, el enlace destaca sobre el fondo oscuro. */
+.home-hero .read-more {
+  padding: 0.65rem 0.9rem;
+  color: #ffffff;
+  background: #135d75;
+  border-radius: 0.5rem;
+}
+
+.home-hero .read-more:hover {
+  color: #ffffff;
+  background: #0d6b87;
+}
+
+/* Bloque visual que simula una imagen de portada. */
+.post-image {
+  position: relative;
+  min-height: 13.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-align: center;
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 700;
+  background: #276678;
+}
+
+/* Bloque opaco del inicio: no espera imagen, solo texto centrado. */
+.blog-block {
+  min-height: 13.75rem;
+  aspect-ratio: auto;
+  background: #276678;
+}
+
+/* Version mas pequena de la imagen para posts normales. */
+.post-image.small {
+  min-height: 9.0625rem;
+  aspect-ratio: 16 / 9;
+  font-size: 1.5rem;
+  background: #16807a;
+}
+
+/* Imagenes de autores con una proporcion menos panoramica para que no se recorten tanto. */
+.author-image {
+  aspect-ratio: 4 / 3;
+  background: #e5ecef;
+}
+
+/* Texto temporal de una caja de imagen cuando aun no hay foto. */
+.post-image span {
+  max-width: 100%;
+  padding: 1rem;
+}
+
+/* Hace que las imagenes ocupen todo el bloque sin deformarse. */
+.post-image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* En el inicio, las fotos de autores se muestran enteras sin recortarse. */
+.author-image img {
+  object-fit: contain;
+  object-position: center;
+  padding: 0.75rem;
+}
+
+/* Carrusel dentro de las tarjetas de posts. */
+.carousel {
+  padding: 0;
+}
+
+/* Cada slide ocupa toda la caja de imagen. */
+.slide {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: #16807a;
+}
+
+/* Slide visible del carrusel. */
+.slide.active {
+  display: flex;
+}
+
+/* Imagen dentro de un slide del carrusel. */
+.slide img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Texto temporal de cada slide. */
+.slide span {
+  position: relative;
+  z-index: 1;
+  padding: 1rem;
+}
+
+/* Botones de anterior y siguiente. */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 1.5rem;
+  line-height: 1;
+  background: rgba(19, 93, 117, 0.75);
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.carousel-btn:hover {
+  background: rgba(13, 107, 135, 0.9);
+}
+
+.prev {
+  left: 0.65rem;
+}
+
+.next {
+  right: 0.65rem;
+}
+
+/* Contenedor de puntos del carrusel. */
+.dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.55rem;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  gap: 0.35rem;
+}
+
+/* Punto de navegacion del carrusel. */
+.dots button {
+  width: 0.55rem;
+  height: 0.55rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.55);
+  cursor: pointer;
+}
+
+.dots button.active {
+  background: #ffffff;
+}
+
+/* Contenido interior de cada tarjeta: texto separado en columna. */
+.post-content {
+  padding: 1.375rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+/* Quita margenes por defecto y mejora la lectura de titulos. */
+.post-content h2,
+.post-content h3,
+.sidebar-box h2 {
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Titulo del post destacado. */
+.post-content h2 {
+  font-size: 1.5625rem;
+}
+
+/* Titulos de posts normales. */
+.post-content h3 {
+  font-size: 1.3125rem;
+}
+
+/* Parrafos de posts y de la barra lateral. */
+.post-content p,
+.sidebar-box p {
+  margin: 0;
+  color: #5c6873;
+  line-height: 1.6;
+}
+
+/* Etiqueta de categoria encima de cada titulo. */
+.category {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #0d6b87;
+}
+
+/* Enlace para leer una entrada completa. */
+.read-more {
+  width: fit-content;
+  margin-top: 0.375rem;
+  font-weight: 700;
+  color: #135d75;
+}
+
+/* Barra lateral colocada en columna. */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.125rem;
+}
+
+/* Espacio interior de cada caja lateral. */
+.sidebar-box {
+  padding: 1.25rem;
+}
+
+/* Lista de categorias sin estilos de lista por defecto. */
+.category-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.875rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+/* Color de enlaces secundarios. */
+.category-list a,
+.mini-posts a {
+  color: #44515d;
+}
+
+/* Lista vertical de ultimos posts. */
+.mini-posts {
+  margin-top: 0.875rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Pie de pagina centrado. */
+.site-footer {
+  grid-area: footer;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  color: #61707e;
+  background: #ffffff;
+  border-top: 0.0625rem solid #d8dde3;
+}
+
+/* Quita el margen del texto del footer. */
+.site-footer p {
+  margin: 0;
+}
+
+/* Paginas interiores con contenido centrado y separacion vertical. */
+.simple-page {
+  grid-area: main;
+  padding: 2.125rem 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+}
+
+/* Variante para paginas con formularios pequenos. */
+.narrow-page {
+  max-width: 42rem;
+}
+
+/* Caja principal para about, contacto, login y registro. */
+.page-card {
+  background: #ffffff;
+  border: 0.0625rem solid #dce1e6;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 0.5rem 1.5rem rgba(34, 45, 57, 0.06);
+}
+
+/* Titulos de las paginas interiores. */
+.page-card h2 {
+  margin: 0;
+  font-size: 1.875rem;
+  line-height: 1.2;
+}
+
+/* Texto de las paginas interiores. */
+.page-card p {
+  margin: 0;
+  color: #5c6873;
+  line-height: 1.6;
+}
+
+/* Formularios en columna, faciles de leer en movil. */
+.form-box {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 0.25rem;
+}
+
+/* Agrupa cada label con su campo para que el formulario respire mejor. */
+.field {
+  display: grid;
+  gap: 0.45rem;
+}
+
+/* Rejilla para formularios con campos que pueden ir en dos columnas. */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+/* Etiquetas de los campos del formulario. */
+.form-box label {
+  font-weight: 700;
+  color: #3f4b57;
+}
+
+/* Campos de texto y textarea con el mismo estilo. */
+.form-box input,
+.form-box textarea {
+  width: 100%;
+  padding: 0.85rem 0.9rem;
+  font: inherit;
+  color: #222;
+  border: 0.0625rem solid #cfd6dd;
+  border-radius: 0.5rem;
+  background: #f8fafb;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+/* Marca visual cuando el usuario esta escribiendo en un campo. */
+.form-box input:focus,
+.form-box textarea:focus {
+  outline: none;
+  border-color: #135d75;
+  background: #ffffff;
+  box-shadow: 0 0 0 0.2rem rgba(19, 93, 117, 0.15);
+}
+
+/* Permite escribir mensajes largos sin romper el layout. */
+.form-box textarea {
+  resize: vertical;
+}
+
+/* Boton principal de los formularios. */
+.form-box button {
+  width: 100%;
+  padding: 0.75rem 1.1rem;
+  font: inherit;
+  font-weight: 700;
+  color: #ffffff;
+  background: #135d75;
+  border: 0;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+/* Zona final del formulario para botones y enlaces. */
+.form-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.85rem;
+}
+
+/* Enlace secundario dentro de login y registro. */
+.form-link {
+  color: #135d75;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Cambio de color del boton al pasar el raton. */
+.form-box button:hover {
+  background: #0d6b87;
+}
+
+/* Pagina de posts con varias secciones separadas. */
+.posts-page {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+}
+
+/* Cabecera de la pagina de posts. */
+.posts-intro {
+  align-items: flex-start;
+}
+
+/* Enlaces internos para saltar a cada categoria. */
+.category-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* Botones simples de categoria. */
+.category-nav a {
+  padding: 0.65rem 0.9rem;
+  color: #135d75;
+  font-weight: 700;
+  border: 0.0625rem solid #cfd6dd;
+  border-radius: 0.5rem;
+  background: #ffffff;
+}
+
+/* Cambio visual al pasar el raton por una categoria. */
+.category-nav a:hover {
+  color: #ffffff;
+  background: #135d75;
+  border-color: #135d75;
+}
+
+/* Cada bloque de categoria dentro de posts. */
+.post-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  scroll-margin-top: 1rem;
+}
+
+/* Titulo de cada categoria de posts. */
+.section-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+/* Titulo principal de cada seccion. */
+.section-title h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+/* Enlace para volver al inicio de la pagina de posts desde cada categoria. */
+.back-to-posts {
+  width: fit-content;
+  color: #135d75;
+  font-weight: 700;
+}
+
+.back-to-posts:hover {
+  color: #0d6b87;
+}
+
+/* Desde pantallas pequenas/medianas, los posts pueden ir en dos columnas. */
+@media (min-width: 500px) {
+  /* Dos tarjetas por fila cuando hay espacio suficiente. */
+  .posts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* El titulo destacado crece un poco en pantallas con mas anchura. */
+  .post-content h2 {
+    font-size: 1.875rem;
+  }
+
+  /* En pantallas medianas el boton ya no necesita ocupar todo el ancho. */
+  .form-actions {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .form-box button {
+    width: fit-content;
+  }
+
+  .form-link {
+    text-align: left;
+  }
+}
+
+/* Desde pantallas grandes, se activa la estructura de escritorio. */
+@media (min-width: 800px) {
+  /* Coloca logo y menu en una fila. */
+  .header-content {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+  }
+
+  /* Crea dos columnas: contenido principal y barra lateral. */
+  .page-grid {
+    grid-template-columns: 1fr minmax(16rem, 18.75rem);
+  }
+
+  /* El post destacado divide imagen y texto en dos columnas. */
+  .post-card.featured {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* La bienvenida del inicio tambien se organiza en dos columnas. */
+  .home-hero {
+    grid-template-columns: 1fr;
+    padding: 2.5rem;
+  }
+
+  /* En escritorio el bloque Blog ocupa toda la altura de la tarjeta destacada. */
+  .post-card.featured .blog-block {
+    min-height: 100%;
+  }
+
+  /* En contacto, nombre y email pueden colocarse en dos columnas. */
+  .form-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

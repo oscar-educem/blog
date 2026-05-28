@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Titulo que aparece en la pestana del navegador. -->
-  <title>Login - Blog Oscar y Eric</title>
+  <title>Registro - Blog Oscar y Eric</title>
 
   <!-- Archivo CSS compartido con la pagina principal. -->
   <link rel="stylesheet" href="../styles.css">
@@ -25,8 +25,8 @@
         <a href="posts.html" i18n data-es="Posts" data-ca="Posts">Posts</a>
         <a href="about.html" i18n data-es="About" data-ca="Sobre nosaltres">About</a>
         <a href="contacto.html" i18n data-es="Contacto" data-ca="Contacte">Contacto</a>
-        <a class="active" href="login.html" i18n data-es="Login" data-ca="Login">Login</a>
-        <a href="registro.html" i18n data-es="Registro" data-ca="Registre">Registro</a>
+        <a href="login.html" i18n data-es="Login" data-ca="Login">Login</a>
+        <a class="active" href="registro.html" i18n data-es="Registro" data-ca="Registre">Registro</a>
         <select id="langSelect" class="language-select" aria-label="Selector de idioma">
           <option value="es">ES</option>
           <option value="ca">CA</option>
@@ -35,13 +35,18 @@
     </div>
   </header>
 
-  <!-- Contenido principal del login. -->
+  <!-- Contenido principal del registro. -->
   <main class="container simple-page narrow-page">
     <section class="page-card">
-      <p class="category" i18n data-es="Login" data-ca="Login">Login</p>
-      <h2 i18n data-es="Iniciar sesion" data-ca="Iniciar sessio">Iniciar sesion</h2>
-      <p i18n data-es="Accede para guardar tus datos y comentar en las publicaciones." data-ca="Accedeix per guardar les teves dades i comentar a les publicacions.">Accede para guardar tus datos y comentar en las publicaciones.</p>
+      <p class="category" i18n data-es="Registro" data-ca="Registre">Registro</p>
+      <h2 i18n data-es="Crear cuenta" data-ca="Crear compte">Crear cuenta</h2>
+      <p i18n data-es="Rellena los datos para poder entrar al blog mas adelante." data-ca="Omple les dades per poder entrar al blog mes endavant.">Rellena los datos para poder entrar al blog mas adelante.</p>
       <form class="form-box">
+        <div class="field">
+          <label for="nombre" i18n data-es="Nombre" data-ca="Nom">Nombre</label>
+          <input id="nombre" type="text" name="nombre" placeholder="Tu nombre" data-placeholder-es="Tu nombre" data-placeholder-ca="El teu nom" autocomplete="name" required>
+        </div>
+
         <div class="field">
           <label for="email" i18n data-es="Email" data-ca="Email">Email</label>
           <input id="email" type="email" name="email" placeholder="tu@email.com" autocomplete="email" required>
@@ -49,12 +54,12 @@
 
         <div class="field">
           <label for="password" i18n data-es="Contrasena" data-ca="Contrasenya">Contrasena</label>
-          <input id="password" type="password" name="password" placeholder="Tu contrasena" data-placeholder-es="Tu contrasena" data-placeholder-ca="La teva contrasenya" autocomplete="current-password" required>
+          <input id="password" type="password" name="password" placeholder="Crea una contrasena" data-placeholder-es="Crea una contrasena" data-placeholder-ca="Crea una contrasenya" autocomplete="new-password" required>
         </div>
 
         <div class="form-actions">
-          <button type="submit" i18n data-es="Entrar" data-ca="Entrar">Entrar</button>
-          <a class="form-link" href="registro.html" i18n data-es="Crear cuenta" data-ca="Crear compte">Crear cuenta</a>
+          <button type="submit" i18n data-es="Registrarme" data-ca="Registrar-me">Registrarme</button>
+          <a class="form-link" href="login.html" i18n data-es="Ya tengo cuenta" data-ca="Ja tinc compte">Ya tengo cuenta</a>
         </div>
       </form>
     </section>
